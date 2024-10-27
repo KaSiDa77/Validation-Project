@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+function validateName(){
+    var x=document.forms["form1"]["urname"].value;
+    if (x==""){
+        alert("Name Field is Mandatory");
+        return false;
+    }
+}
+function verifyAge(){
+    var inputObject=document.getElementById("age");
+    if(!inputObject.checkValidity()){
+        document.write(inputobject.validationMessage)
+    }
+}
+    </script>
+    <h1>Enter Details to Vote Here:</h1>
+    <form name="form1" onsubmit="validateName()">
+        Name:<input type="text" name="urname">
+        <br><br>
+Age:<input id="age" type="number" min="18" required>
+<button onclick="verifyAge()">GO</button>
+</body>
+</html>
